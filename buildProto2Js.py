@@ -38,6 +38,7 @@ for dirName in dirList:
     CMD = "pbjs  --dependency protobufjs/minimal.js   --target static-module  --wrap  es6  --force-long --force-message --no-verify --no-convert --no-delimited --no-beautify --no-service -o {}  proto/{}/*.proto".format(pbFile,dirName)
     CMD2 = "pbts  --name {} --no-comments -o {}  {}".format(fileName,tsFile,pbFile)
     os.system(CMD)
+    os.system(CMD2)
 #---no-verify --no-convert --no-delimited --no-beautify --no-service  
     with open(pbFile,"r") as f:
         data = f.read()
@@ -49,7 +50,6 @@ for dirName in dirList:
             f.write(data)
             f.close()
        
-    os.system(CMD2)
    
     destDir = outDir + "/" + dirName
     if os.path.exists(destDir):
