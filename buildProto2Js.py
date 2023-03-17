@@ -51,7 +51,7 @@ for dirName in dirList:
        
     os.system(CMD2)
    
-    destDir = outDir + "/" + dirName +"/proto"
+    destDir = outDir + "/" + dirName
     if os.path.exists(destDir):
         shutil.rmtree(destDir)
     os.makedirs(destDir)
